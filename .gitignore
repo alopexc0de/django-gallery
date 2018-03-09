@@ -1,0 +1,11 @@
+__pycache__
+.*~
+*.pyc
+*.pyo
+.*.swp
+venv
+*.sublime-project
+*.sublime-workspace
+*.orig
+.vscode/*
+*.sqlite3
