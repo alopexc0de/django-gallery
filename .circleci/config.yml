@@ -29,7 +29,7 @@ jobs:
       - run: sudo apt install postgresql-client-9.4 postgresql-9.4
       - run: sudo /etc/init.d/postgresql start
       - run: |
-           psql < newdb.sql
+           psql -U root -h localhost < newdb.sql
 
       # Download and cache dependencies
       - restore_cache:
