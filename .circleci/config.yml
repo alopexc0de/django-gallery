@@ -28,7 +28,7 @@ jobs:
       # Set up Test DB
       - run: sudo apt install postgresql-client-9.4 postgresql-9.4
       - run: sudo /etc/init.d/postgresql start
-      - run: sudo ./newdb.sh
+      - run: sudo ${HOME}/repo/newdb.sh
 
       # Download and cache dependencies
       - restore_cache:
