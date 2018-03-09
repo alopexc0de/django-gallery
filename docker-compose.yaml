@@ -16,6 +16,10 @@ services:
     build: .
     environment:
       PORTAL_DEBUG: 'true'
+      POSTGRES_PASSWORD: totallyHacked1337
+      POSTGRES_USER: imagehost
+      POSTGRES_DB: imagehost_db
+      POSTGRES_HOST: postgres
     volumes:
       - .:/portal
     ports:
