@@ -3,6 +3,17 @@
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
 version: 2
+
+services:
+  postgres:
+    image: circleci/postgres:9.4
+    environment:
+      POSTGRES_PASSWORD: totallyHacked1337
+      POSTGRES_USER: imagehost
+      POSTGRES_DB: imagehost_db
+    ports:
+      - '5432:5432'
+
 jobs:
   build:
     docker:
@@ -13,7 +24,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: circleci/postgres:9.4
+      - image: postgres
 
     working_directory: ~/repo
 
