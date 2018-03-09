@@ -1,0 +1,2 @@
+CREATE USER imagehost WITH SUPERUSER CREATEDB LOGIN PASSWORD 'totallyHacked1337';
+CREATE DATABASE imagehost_db OWNER imagehost;
