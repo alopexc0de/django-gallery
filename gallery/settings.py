@@ -28,6 +28,9 @@ ALLOWED_HOSTS = ['*']
 
 if DEBUG:
     INTERNAL_IPS = ('localhost',)
+    DEBUG_TOOLBAR_CONFIG = {
+        'SHOW_TOOLBAR_CALLBACK': (lambda x: True),
+    }
 
 # SMTP server/relay to send error emails (to ADMINS) from
 ADMINS = [('c0de', 'c0de@c0defox.es')]
@@ -53,6 +56,7 @@ INSTALLED_APPS = [
 ]
 if DEBUG:
     INSTALLED_APPS += [
+        'debug_toolbar',
         'debug_panel'
     ]
 
