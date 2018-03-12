@@ -27,5 +27,5 @@ class AccountTestCase(TestCase):
         usr_acct1 = Account.objects.get(user=usr1)
         usr2 = User.objects.get(username='usr2')
         usr_acct2 = Account.objects.get(user=usr2)
-        self.assertEqual(usr_acct1.__str__(), {'user': 'usr1', 'first_login': True, 'accepted_terms': None})
-        self.assertEqual(usr_acct2.__str__(), {'user': 'usr2', 'first_login': True, 'accepted_terms': None})
+        self.assertEqual(usr_acct1.get_meta(), {'user': 'usr1', 'first_login': True, 'accepted_terms': None})
+        self.assertEqual(usr_acct2.get_meta(), {'user': 'usr2', 'first_login': True, 'accepted_terms': None})
