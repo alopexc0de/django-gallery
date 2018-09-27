@@ -27,6 +27,15 @@ class Account(models.Model):
     def __str__(self):
         return "<%s:%s>" % (self.id, self.user.username)
 
+    def get_meta(self):
+        meta = {
+            'user': self.user.username,
+            'first_login': self.first_login,
+            'accepted_terms': self.accepted_terms
+        }
+
+        return meta
+
     def create_user(self, username, first_name, last_name, email, password):
         # Create a user
         usr_obj = User.objects.get_or_create(username=username,
