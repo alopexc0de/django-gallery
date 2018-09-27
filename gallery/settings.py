@@ -41,6 +41,15 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
+# AWS or compatible s3 storage - These should be defined through the environment
+AWS_STORAGE_BUCKET_NAME = os.environ.get('S3_BUCKET', '')
+AWS_S3_REGION_NAME = os.environ.get('S3_REGION', '') # eg. us-east-1
+AWS_ACCESS_KEY_ID = os.environ.get('S3_ACCESS_KEY_ID', '')
+AWS_SECRET_ACCESS_KEY = os.environ.get('S3_SECRET_ACCESS_KEY', '')
+AWS_S3_CUSTOM_DOMAIN = os.environ.get('S3_CUSTOM_DOMAIN', None)
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -52,6 +61,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'inline_actions',
+    'storages'
 ]
 if DEBUG:
     INSTALLED_APPS += [
